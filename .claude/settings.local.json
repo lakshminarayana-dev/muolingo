@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node -e \"const pkg = require\\('./node_modules/nativewind/package.json'\\); console.log\\(pkg.version\\)\")",
+      "Bash(npm view *)",
+      "Bash(node -e \"const d = require\\('fs'\\).readFileSync\\(0,'utf8'\\); const v = JSON.parse\\(d\\); console.log\\(v.filter\\(x => x.startsWith\\('5.'\\)\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(dir \"e:\\\\learning\\\\vibecoding\\\\muolingo\\\\node_modules\\\\nativewind\" /b)",
+      "Bash(findstr /i \"type\")",
+      "Bash(npx tsc *)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
