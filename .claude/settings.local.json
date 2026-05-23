@@ -23,7 +23,11 @@
       "Bash(Get-Content \"e:\\\\learning\\\\vibecoding\\\\muolingo\\\\node_modules\\\\@clerk\\\\expo\\\\dist\\\\index.d.ts\")",
       "Bash(Select-String \"useSign|useAuth|tokenCache|ClerkProvider\")",
       "Bash(Select-Object -First 30)",
-      "Bash(npm run *)"
+      "Bash(npm run lint)",
+      "Bash(npm run start)",
+      "Bash(npm run android)",
+      "Bash(npm run ios)",
+      "Bash(Select-Object Name)"
     ]
   }
 }
