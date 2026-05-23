@@ -9,7 +9,21 @@
       "Bash(findstr /i \"type\")",
       "Bash(npx tsc *)",
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Skill(clerk)",
+      "Skill(clerk:*)",
+      "Bash(npx expo *)",
+      "Bash(node -e \"const p = require\\('./node_modules/@clerk/expo/package.json'\\); console.log\\(p.version\\)\")",
+      "Bash(node -e \"const sdk = require\\('./node_modules/@clerk/expo'\\); console.log\\(Object.keys\\(sdk\\)\\)\")",
+      "Bash(node -e \"const d=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); const p=JSON.parse\\(d\\); console.log\\(JSON.stringify\\(p.exports ? Object.keys\\(p.exports\\) : 'no exports field', null, 2\\)\\)\")",
+      "Bash(Get-Content \"e:\\\\learning\\\\vibecoding\\\\muolingo\\\\node_modules\\\\@clerk\\\\expo\\\\dist\\\\index.d.ts\")",
+      "Bash(Select-String \"useSign|useAuth|tokenCache|ClerkProvider\")",
+      "Bash(Select-Object -First 30)",
+      "Bash(npm run *)"
     ]
   }
 }
