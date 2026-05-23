@@ -1,4 +1,5 @@
 import { Language } from "@/types/learning";
+import { UNITS } from "@/data/units";
 
 export const LANGUAGES: Language[] = [
   {
@@ -50,3 +51,8 @@ export const LANGUAGES: Language[] = [
     learners: "7.4M",
   },
 ];
+
+const _coveredCodes = new Set(UNITS.map((u) => u.languageCode));
+export const SUPPORTED_LANGUAGES = LANGUAGES.filter((l) =>
+  _coveredCodes.has(l.code)
+);

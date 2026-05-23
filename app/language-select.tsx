@@ -3,7 +3,7 @@ import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from "react-
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { LANGUAGES } from "@/data/languages";
+import { SUPPORTED_LANGUAGES } from "@/data/languages";
 import { images } from "@/constants/images";
 import { useLanguageStore } from "@/store/languageStore";
 import type { LanguageCode } from "@/types/learning";
@@ -13,7 +13,7 @@ export default function LanguageSelectScreen() {
   const [selectedCode, setSelectedCode] = useState<LanguageCode | null>(storedCode);
   const [search, setSearch] = useState("");
 
-  const filtered = LANGUAGES.filter(
+  const filtered = SUPPORTED_LANGUAGES.filter(
     (lang) =>
       lang.name.toLowerCase().includes(search.toLowerCase()) ||
       lang.nativeName.toLowerCase().includes(search.toLowerCase())
