@@ -1,21 +1,16 @@
 import { useState } from "react";
-import {
-  FlatList,
-  Image,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { LANGUAGES } from "@/data/languages";
 import { images } from "@/constants/images";
+import { useLanguageStore } from "@/store/languageStore";
+import type { LanguageCode } from "@/types/learning";
 
 export default function LanguageSelectScreen() {
-  const [selectedCode, setSelectedCode] = useState<string | null>(null);
+  const { selectedCode: storedCode, setSelectedCode: saveLanguage } = useLanguageStore();
+  const [selectedCode, setSelectedCode] = useState<LanguageCode | null>(storedCode);
   const [search, setSearch] = useState("");
 
   const filtered = LANGUAGES.filter(
@@ -50,7 +45,7 @@ export default function LanguageSelectScreen() {
             placeholderTextColor="#9ca3af"
             value={search}
             onChangeText={setSearch}
-            style={styles.searchInput}
+            className="flex-1 font-poppins text-sm text-text-primary py-0"
             underlineColorAndroid="transparent"
           />
         </View>
@@ -61,25 +56,28 @@ export default function LanguageSelectScreen() {
         data={filtered}
         keyExtractor={(item) => item.code}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.listContent}
+        contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 8 }}
         ListHeaderComponent={
-          <Text style={styles.sectionLabel}>Popular</Text>
+          <Text className="font-poppins-semibold text-[15px] text-text-primary mb-2.5">
+            Popular
+          </Text>
         }
         renderItem={({ item }) => {
           const isSelected = item.code === selectedCode;
           return (
             <TouchableOpacity
-              onPress={() => setSelectedCode(item.code)}
+              onPress={() => setSelectedCode(item.code as LanguageCode)}
               activeOpacity={0.7}
-              style={[
-                styles.languageItem,
-                isSelected && styles.languageItemSelected,
-              ]}
+              className={`flex-row items-center py-3 px-3.5 mb-2 rounded-2xl ${
+                isSelected
+                  ? "border-2 border-lingua-purple bg-[#f0edff]"
+                  : "border-[1.5px] border-border bg-white"
+              }`}
             >
-              <View style={styles.flagContainer}>
+              <View className="w-11 h-11 rounded-full overflow-hidden bg-surface">
                 <Image
                   source={{ uri: item.flag }}
-                  style={styles.flagImage}
+                  className="w-11 h-11"
                   resizeMode="cover"
                 />
               </View>
@@ -107,7 +105,12 @@ export default function LanguageSelectScreen() {
           className="bg-lingua-purple rounded-[28px] h-14 items-center justify-center"
           activeOpacity={0.85}
           disabled={!selectedCode}
-          onPress={() => router.back()}
+          onPress={() => {
+            if (selectedCode) {
+              saveLanguage(selectedCode);
+              router.back();
+            }
+          }}
         >
           <Text className="font-poppins-semibold text-base text-white">
             Continue
@@ -118,60 +121,10 @@ export default function LanguageSelectScreen() {
       {/* Earth decoration */}
       <Image
         source={images.earth}
-        style={styles.earthImage}
+        className="w-full h-35"
         resizeMode="cover"
       />
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  listContent: {
-    paddingHorizontal: 16,
-    paddingBottom: 8,
-  },
-  sectionLabel: {
-    fontFamily: "Poppins-SemiBold",
-    fontSize: 15,
-    color: "#001328",
-    marginBottom: 10,
-  },
-  searchInput: {
-    flex: 1,
-    fontFamily: "Poppins-Regular",
-    fontSize: 14,
-    color: "#001328",
-    paddingVertical: 0,
-  },
-  languageItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 14,
-    marginBottom: 8,
-    borderRadius: 16,
-    borderWidth: 1.5,
-    borderColor: "#e5e7eb",
-    backgroundColor: "#ffffff",
-  },
-  languageItemSelected: {
-    borderWidth: 2,
-    borderColor: "#6c4ef5",
-    backgroundColor: "#f0edff",
-  },
-  flagContainer: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    overflow: "hidden",
-    backgroundColor: "#f6f7fb",
-  },
-  flagImage: {
-    width: 44,
-    height: 44,
-  },
-  earthImage: {
-    width: "100%",
-    height: 140,
-  },
-});
