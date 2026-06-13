@@ -24,8 +24,9 @@ export const useLanguageStore = create<LanguageState>()(
     {
       name: "language-storage",
       storage: createJSONStorage(() => AsyncStorage),
-      onRehydrateStorage: () => (state) => {
-        state?.setHasHydrated(true);
+      onRehydrateStorage: () => (state, _error) => {
+        const target = state ?? useLanguageStore.getState();
+        target.setHasHydrated(true);
       },
     },
   ),
