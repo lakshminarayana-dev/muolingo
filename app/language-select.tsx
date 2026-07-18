@@ -108,7 +108,7 @@ export default function LanguageSelectScreen() {
           onPress={() => {
             if (selectedCode) {
               saveLanguage(selectedCode);
-              router.back();
+              router.replace("/");
             }
           }}
         >
