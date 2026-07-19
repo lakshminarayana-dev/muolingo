@@ -7,7 +7,14 @@ export const UNITS: Unit[] = [
     title: "Greetings & Basics",
     description: "Start your Spanish journey with everyday phrases",
     order: 1,
-    lessonIds: ["es-lesson-1", "es-lesson-2", "es-lesson-3"],
+    lessonIds: [
+      "es-lesson-1",
+      "es-lesson-2",
+      "es-lesson-3",
+      "es-lesson-4",
+      "es-lesson-5",
+      "es-lesson-6",
+    ],
   },
   {
     id: "fr-unit-1",
@@ -21,6 +28,7 @@ export const UNITS: Unit[] = [
       "fr-lesson-3",
       "fr-lesson-4",
       "fr-lesson-5",
+      "fr-lesson-6",
     ],
   },
   {
@@ -35,6 +43,7 @@ export const UNITS: Unit[] = [
       "ja-lesson-3",
       "ja-lesson-4",
       "ja-lesson-5",
+      "ja-lesson-6",
     ],
   },
   {
@@ -49,6 +58,7 @@ export const UNITS: Unit[] = [
       "de-lesson-3",
       "de-lesson-4",
       "de-lesson-5",
+      "de-lesson-6",
     ],
   },
 ];

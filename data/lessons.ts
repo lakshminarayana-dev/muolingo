@@ -326,6 +326,269 @@ export const LESSONS: Lesson[] = [
     },
   },
 
+  {
+    id: "es-lesson-4",
+    unitId: "es-unit-1",
+    title: "Colors",
+    description: "Learn basic colors in Spanish",
+    icon: "🎨",
+    xpReward: 10,
+    goals: [
+      { description: "Learn 6 colors in Spanish", xpReward: 6 },
+      { description: "Complete all activities", xpReward: 4 },
+    ],
+    vocabulary: [
+      { word: "Rojo", translation: "Red", pronunciation: "ROH-hoh", emoji: "🔴" },
+      { word: "Azul", translation: "Blue", pronunciation: "ah-SOOL", emoji: "🔵" },
+      {
+        word: "Verde",
+        translation: "Green",
+        pronunciation: "VEHR-deh",
+        emoji: "🟢",
+      },
+      {
+        word: "Amarillo",
+        translation: "Yellow",
+        pronunciation: "ah-mah-REE-yoh",
+        emoji: "🟡",
+      },
+      {
+        word: "Negro",
+        translation: "Black",
+        pronunciation: "NEH-groh",
+        emoji: "⚫",
+      },
+      {
+        word: "Blanco",
+        translation: "White",
+        pronunciation: "BLAHN-koh",
+        emoji: "⚪",
+      },
+    ],
+    phrases: [
+      {
+        text: "¿De qué color es esto?",
+        translation: "What color is this?",
+        pronunciation: "deh keh koh-LOHR ehs EHS-toh",
+      },
+      {
+        text: "Es rojo.",
+        translation: "It is red.",
+        pronunciation: "ehs ROH-hoh",
+      },
+    ],
+    activities: [
+      {
+        id: "es-lesson-4-act-1",
+        type: "multiple-choice",
+        question: 'What does "azul" mean?',
+        correctAnswer: "Blue",
+        options: ["Red", "Blue", "Green", "Yellow"],
+      },
+      {
+        id: "es-lesson-4-act-2",
+        type: "multiple-choice",
+        question: 'How do you say "green" in Spanish?',
+        correctAnswer: "Verde",
+        options: ["Rojo", "Azul", "Verde", "Amarillo"],
+      },
+      {
+        id: "es-lesson-4-act-3",
+        type: "translate",
+        question: 'Translate: "Black"',
+        correctAnswer: "Negro",
+        hint: 'Pronounced "NEH-groh".',
+      },
+    ],
+    aiTeacherPrompt: {
+      systemPrompt:
+        "You're Luna, a lively Spanish teacher in a real back-and-forth voice lesson about colors in Spanish. This is INTERACTIVE — not a lecture. Introduce ONE color at a time: say it, give the translation and a quick pronunciation tip, then END YOUR TURN and wait for the student. Your turn ENDS at the question mark — stop there and output nothing else. Never write a reaction in the same turn as a teaching step. Keep every reply to one or two sentences. Stay strictly within rojo, azul, verde, amarillo, negro, blanco, and the phrases ¿De qué color es esto? and Es rojo.",
+      introMessage:
+        "¡Hola! Today we're learning colors in Spanish — rojo, azul, verde — it's one of my favorite lessons, let's dive in!",
+      topics: ["colors", "adjectives", "descriptions"],
+    },
+  },
+
+  {
+    id: "es-lesson-5",
+    unitId: "es-unit-1",
+    title: "Family & Friends",
+    description: "Talk about your family and friends in Spanish",
+    icon: "👨‍👩‍👧‍👦",
+    xpReward: 10,
+    goals: [
+      { description: "Learn 6 family words", xpReward: 6 },
+      { description: "Complete all activities", xpReward: 4 },
+    ],
+    vocabulary: [
+      {
+        word: "Familia",
+        translation: "Family",
+        pronunciation: "fah-MEE-lyah",
+        emoji: "👨‍👩‍👧‍👦",
+      },
+      {
+        word: "Madre",
+        translation: "Mother",
+        pronunciation: "MAH-dreh",
+        emoji: "👩",
+      },
+      {
+        word: "Padre",
+        translation: "Father",
+        pronunciation: "PAH-dreh",
+        emoji: "👨",
+      },
+      {
+        word: "Hermano",
+        translation: "Brother",
+        pronunciation: "ehr-MAH-noh",
+        emoji: "👦",
+      },
+      {
+        word: "Hermana",
+        translation: "Sister",
+        pronunciation: "ehr-MAH-nah",
+        emoji: "👧",
+      },
+      {
+        word: "Amigo/a",
+        translation: "Friend",
+        pronunciation: "ah-MEE-goh",
+        emoji: "🧑‍🤝‍🧑",
+      },
+    ],
+    phrases: [
+      {
+        text: "Esta es mi familia.",
+        translation: "This is my family.",
+        pronunciation: "EHS-tah ehs mee fah-MEE-lyah",
+      },
+      {
+        text: "Él es mi hermano.",
+        translation: "He is my brother.",
+        pronunciation: "ehl ehs mee ehr-MAH-noh",
+      },
+    ],
+    activities: [
+      {
+        id: "es-lesson-5-act-1",
+        type: "multiple-choice",
+        question: 'What does "hermana" mean?',
+        correctAnswer: "Sister",
+        options: ["Mother", "Sister", "Brother", "Friend"],
+      },
+      {
+        id: "es-lesson-5-act-2",
+        type: "multiple-choice",
+        question: 'How do you say "father" in Spanish?',
+        correctAnswer: "Padre",
+        options: ["Madre", "Padre", "Hermano", "Amigo"],
+      },
+      {
+        id: "es-lesson-5-act-3",
+        type: "translate",
+        question: 'Translate: "This is my family."',
+        correctAnswer: "Esta es mi familia.",
+        hint: '"Familia" means family.',
+      },
+    ],
+    aiTeacherPrompt: {
+      systemPrompt:
+        "You're Luna, a warm Spanish teacher in a real back-and-forth voice lesson about family and friends in Spanish. This is INTERACTIVE — not a lecture. Introduce ONE word at a time: say it, give the translation, then END YOUR TURN and wait for the student. Your turn ENDS at the question mark — stop there and output nothing else. Never write a reaction in the same turn as a teaching step. Keep every reply to one or two sentences. Stay strictly within: familia, madre, padre, hermano, hermana, amigo/a, and the phrases Esta es mi familia and Él es mi hermano.",
+      introMessage:
+        "¡Hola! Today we're talking about family and friends in Spanish — familia is such a warm word, let's start!",
+      topics: ["family", "friends", "relationships"],
+    },
+  },
+
+  {
+    id: "es-lesson-6",
+    unitId: "es-unit-1",
+    title: "At the Café",
+    description: "Order food and drinks at a Spanish café",
+    icon: "☕",
+    xpReward: 15,
+    goals: [
+      { description: "Learn café vocabulary in Spanish", xpReward: 8 },
+      { description: "Practice ordering in Spanish", xpReward: 7 },
+    ],
+    vocabulary: [
+      {
+        word: "Un café",
+        translation: "A coffee",
+        pronunciation: "oon kah-FEH",
+        emoji: "☕",
+      },
+      {
+        word: "Un té",
+        translation: "A tea",
+        pronunciation: "oon TEH",
+        emoji: "🍵",
+      },
+      {
+        word: "Agua",
+        translation: "Water",
+        pronunciation: "AH-gwah",
+        emoji: "💧",
+      },
+      {
+        word: "Un croissant",
+        translation: "A croissant",
+        pronunciation: "oon krwah-SAHN",
+        emoji: "🥐",
+      },
+      {
+        word: "La cuenta",
+        translation: "The bill",
+        pronunciation: "lah KWEHN-tah",
+        emoji: "🧾",
+      },
+    ],
+    phrases: [
+      {
+        text: "Quisiera un café, por favor.",
+        translation: "I would like a coffee, please.",
+        pronunciation: "kee-SYEH-rah oon kah-FEH, pohr fah-VOHR",
+      },
+      {
+        text: "La cuenta, por favor.",
+        translation: "The bill, please.",
+        pronunciation: "lah KWEHN-tah, pohr fah-VOHR",
+      },
+    ],
+    activities: [
+      {
+        id: "es-lesson-6-act-1",
+        type: "multiple-choice",
+        question: 'How do you say "a coffee" in Spanish?',
+        correctAnswer: "Un café",
+        options: ["Un té", "Un café", "Agua", "Un croissant"],
+      },
+      {
+        id: "es-lesson-6-act-2",
+        type: "translate",
+        question: 'Translate: "The bill, please."',
+        correctAnswer: "La cuenta, por favor.",
+        hint: '"La cuenta" means the bill.',
+      },
+      {
+        id: "es-lesson-6-act-3",
+        type: "multiple-choice",
+        question: 'What does "Quisiera" mean?',
+        correctAnswer: "I would like",
+        options: ["I want", "I would like", "Give me", "Please"],
+      },
+    ],
+    aiTeacherPrompt: {
+      systemPrompt:
+        "You're Luna, a charming Spanish teacher in a real back-and-forth voice lesson set at a Spanish café. This is INTERACTIVE — not a lecture. Introduce ONE item or phrase at a time: say it, give the translation, then END YOUR TURN and wait for the student. Your turn ENDS at the question mark — stop there and output nothing else. Never write a reaction in the same turn as a teaching step. Keep every reply to one or two sentences. Stay strictly within: un café, un té, agua, un croissant, la cuenta, Quisiera, and por favor.",
+      introMessage:
+        "¡Hola! Imagine we're sitting at a sunny Spanish café — today you'll learn to order like a local!",
+      topics: ["food", "drinks", "ordering", "café phrases"],
+    },
+  },
+
   // ─── French ────────────────────────────────────────────────────────────────
 
   {
@@ -1758,6 +2021,281 @@ export const LESSONS: Lesson[] = [
       introMessage:
         "Hallo! Stell dir vor — imagine we're sitting in a cosy German café — today you'll learn how to order your favorite things auf Deutsch!",
       topics: ["food", "drinks", "ordering", "café phrases", "polite German"],
+    },
+  },
+
+  // ─── Family & Friends (6th lesson, all languages) ─────────────────────────
+
+  {
+    id: "fr-lesson-6",
+    unitId: "fr-unit-1",
+    title: "Family & Friends",
+    description: "Talk about your family and friends in French",
+    icon: "👨‍👩‍👧‍👦",
+    xpReward: 10,
+    goals: [
+      { description: "Learn 6 family words in French", xpReward: 6 },
+      { description: "Complete all activities", xpReward: 4 },
+    ],
+    vocabulary: [
+      {
+        word: "La famille",
+        translation: "Family",
+        pronunciation: "lah fah-MEE",
+        emoji: "👨‍👩‍👧‍👦",
+      },
+      {
+        word: "La mère",
+        translation: "Mother",
+        pronunciation: "lah mehr",
+        emoji: "👩",
+      },
+      {
+        word: "Le père",
+        translation: "Father",
+        pronunciation: "luh pehr",
+        emoji: "👨",
+      },
+      {
+        word: "Le frère",
+        translation: "Brother",
+        pronunciation: "luh frehr",
+        emoji: "👦",
+      },
+      {
+        word: "La sœur",
+        translation: "Sister",
+        pronunciation: "lah suhr",
+        emoji: "👧",
+      },
+      {
+        word: "L'ami(e)",
+        translation: "Friend",
+        pronunciation: "lah-MEE",
+        emoji: "🧑‍🤝‍🧑",
+      },
+    ],
+    phrases: [
+      {
+        text: "Voici ma famille.",
+        translation: "Here is my family.",
+        pronunciation: "vwah-SEE mah fah-MEE",
+      },
+      {
+        text: "C'est mon frère.",
+        translation: "This is my brother.",
+        pronunciation: "seh mohn frehr",
+      },
+    ],
+    activities: [
+      {
+        id: "fr-lesson-6-act-1",
+        type: "multiple-choice",
+        question: 'What does "la sœur" mean?',
+        correctAnswer: "Sister",
+        options: ["Mother", "Sister", "Brother", "Friend"],
+      },
+      {
+        id: "fr-lesson-6-act-2",
+        type: "multiple-choice",
+        question: 'How do you say "father" in French?',
+        correctAnswer: "Le père",
+        options: ["La mère", "Le père", "Le frère", "L'ami"],
+      },
+      {
+        id: "fr-lesson-6-act-3",
+        type: "translate",
+        question: 'Translate: "Here is my family."',
+        correctAnswer: "Voici ma famille.",
+        hint: '"La famille" means family.',
+      },
+    ],
+    aiTeacherPrompt: {
+      systemPrompt:
+        "You're Claire, a warm French teacher in a real back-and-forth voice lesson about family and friends in French. This is INTERACTIVE — not a lecture. Introduce ONE word at a time: say it, give the translation, then END YOUR TURN and wait for the student. Your turn ENDS at the question mark — stop there and output nothing else. Never write a reaction in the same turn as a teaching step. Keep every reply to one or two sentences. Stay strictly within: la famille, la mère, le père, le frère, la sœur, l'ami(e), and the phrases Voici ma famille and C'est mon frère.",
+      introMessage:
+        "Bonjour! Today we're talking about family and friends in French — la famille is such a lovely place to start!",
+      topics: ["family", "friends", "relationships"],
+    },
+  },
+
+  {
+    id: "ja-lesson-6",
+    unitId: "ja-unit-1",
+    title: "Family & Friends",
+    description: "Talk about your family and friends in Japanese",
+    icon: "👨‍👩‍👧‍👦",
+    xpReward: 10,
+    goals: [
+      { description: "Learn 5 family words in Japanese", xpReward: 6 },
+      { description: "Complete all activities", xpReward: 4 },
+    ],
+    vocabulary: [
+      {
+        word: "かぞく",
+        translation: "Family",
+        pronunciation: "ka-zo-ku",
+        emoji: "👨‍👩‍👧‍👦",
+      },
+      {
+        word: "はは",
+        translation: "Mother",
+        pronunciation: "ha-ha",
+        emoji: "👩",
+      },
+      {
+        word: "ちち",
+        translation: "Father",
+        pronunciation: "chi-chi",
+        emoji: "👨",
+      },
+      {
+        word: "きょうだい",
+        translation: "Siblings",
+        pronunciation: "kyo-da-i",
+        emoji: "👦",
+      },
+      {
+        word: "ともだち",
+        translation: "Friend",
+        pronunciation: "to-mo-da-chi",
+        emoji: "🧑‍🤝‍🧑",
+      },
+    ],
+    phrases: [
+      {
+        text: "かぞくです。",
+        translation: "This is my family.",
+        pronunciation: "ka-zo-ku des",
+      },
+      {
+        text: "ともだちです。",
+        translation: "This is my friend.",
+        pronunciation: "to-mo-da-chi des",
+      },
+    ],
+    activities: [
+      {
+        id: "ja-lesson-6-act-1",
+        type: "multiple-choice",
+        question: 'What does "はは" mean?',
+        correctAnswer: "Mother",
+        options: ["Mother", "Father", "Sibling", "Friend"],
+      },
+      {
+        id: "ja-lesson-6-act-2",
+        type: "multiple-choice",
+        question: 'How do you say "friend" in Japanese?',
+        correctAnswer: "ともだち",
+        options: ["かぞく", "ちち", "きょうだい", "ともだち"],
+      },
+      {
+        id: "ja-lesson-6-act-3",
+        type: "translate",
+        question: 'Translate: "This is my family."',
+        correctAnswer: "かぞくです。",
+        hint: '"かぞく" means family.',
+      },
+    ],
+    aiTeacherPrompt: {
+      systemPrompt:
+        "You're Yuki, a friendly Japanese teacher in a real back-and-forth voice lesson about family and friends in Japanese. This is INTERACTIVE — not a lecture. Introduce ONE word at a time: say it, give the meaning, then END YOUR TURN and wait for the student. Your turn ENDS at the question mark — stop there and output nothing else. Never write a reaction in the same turn as a teaching step. Keep every reply to one or two sentences. Stay strictly within: かぞく, はは, ちち, きょうだい, ともだち, and the sentences かぞくです and ともだちです.",
+      introMessage:
+        "こんにちは! Today we're talking about family and friends in Japanese — かぞく is a warm word to start with!",
+      topics: ["family", "friends", "relationships"],
+    },
+  },
+
+  {
+    id: "de-lesson-6",
+    unitId: "de-unit-1",
+    title: "Family & Friends",
+    description: "Talk about your family and friends in German",
+    icon: "👨‍👩‍👧‍👦",
+    xpReward: 10,
+    goals: [
+      { description: "Learn 6 family words in German", xpReward: 6 },
+      { description: "Complete all activities", xpReward: 4 },
+    ],
+    vocabulary: [
+      {
+        word: "Familie",
+        translation: "Family",
+        pronunciation: "fah-MEE-lyeh",
+        emoji: "👨‍👩‍👧‍👦",
+      },
+      {
+        word: "Mutter",
+        translation: "Mother",
+        pronunciation: "MOO-ter",
+        emoji: "👩",
+      },
+      {
+        word: "Vater",
+        translation: "Father",
+        pronunciation: "FAH-ter",
+        emoji: "👨",
+      },
+      {
+        word: "Bruder",
+        translation: "Brother",
+        pronunciation: "BROO-der",
+        emoji: "👦",
+      },
+      {
+        word: "Schwester",
+        translation: "Sister",
+        pronunciation: "SHVEHS-ter",
+        emoji: "👧",
+      },
+      {
+        word: "Freund(in)",
+        translation: "Friend",
+        pronunciation: "froynt",
+        emoji: "🧑‍🤝‍🧑",
+      },
+    ],
+    phrases: [
+      {
+        text: "Das ist meine Familie.",
+        translation: "This is my family.",
+        pronunciation: "das ist MY-neh fah-MEE-lyeh",
+      },
+      {
+        text: "Er ist mein Bruder.",
+        translation: "He is my brother.",
+        pronunciation: "ehr ist mine BROO-der",
+      },
+    ],
+    activities: [
+      {
+        id: "de-lesson-6-act-1",
+        type: "multiple-choice",
+        question: 'What does "Schwester" mean?',
+        correctAnswer: "Sister",
+        options: ["Mother", "Sister", "Brother", "Friend"],
+      },
+      {
+        id: "de-lesson-6-act-2",
+        type: "multiple-choice",
+        question: 'How do you say "father" in German?',
+        correctAnswer: "Vater",
+        options: ["Mutter", "Vater", "Bruder", "Freund"],
+      },
+      {
+        id: "de-lesson-6-act-3",
+        type: "translate",
+        question: 'Translate: "This is my family."',
+        correctAnswer: "Das ist meine Familie.",
+        hint: '"Familie" means family.',
+      },
+    ],
+    aiTeacherPrompt: {
+      systemPrompt:
+        "You're Max, a warm German teacher in a real back-and-forth voice lesson about family and friends in German. This is INTERACTIVE — not a lecture. Introduce ONE word at a time: say it, give the translation, then END YOUR TURN and wait for the student. Your turn ENDS at the question mark — stop there and output nothing else. Never write a reaction in the same turn as a teaching step. Keep every reply to one or two sentences. Stay strictly within: Familie, Mutter, Vater, Bruder, Schwester, Freund(in), and the phrases Das ist meine Familie and Er ist mein Bruder.",
+      introMessage:
+        "Hallo! Today we're talking about family and friends in German — Familie is a wonderful place to start!",
+      topics: ["family", "friends", "relationships"],
     },
   },
 ];
